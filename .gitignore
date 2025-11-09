@@ -76,3 +76,8 @@ Thumbs.db
 # Logs
 *.log
 
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+/.codex
