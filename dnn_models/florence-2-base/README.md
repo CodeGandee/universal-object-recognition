@@ -5,13 +5,14 @@
 
 约定
 - 本目录不存放实际权重，`source` 为指向 Hugging Face 缓存目录的符号链接。
-- 当前链接示例：
-  `source -> /home/igame/.cache/huggingface/hub/models--microsoft--Florence-2-base`
+- 当前链接示例（固定到快照 hash）：
+  `source -> $HOME/.cache/huggingface/hub/models--microsoft--Florence-2-base/snapshots/<hash>`
 
 重新链接（示例）
 ```bash
 rm -rf source
-ln -s "$HOME/.cache/huggingface/hub/models--microsoft--Florence-2-base" source
+HASH=$(cat "$HOME/.cache/huggingface/hub/models--microsoft--Florence-2-base/refs/main")
+ln -s "$HOME/.cache/huggingface/hub/models--microsoft--Florence-2-base/snapshots/$HASH" source
 ```
 
 提示

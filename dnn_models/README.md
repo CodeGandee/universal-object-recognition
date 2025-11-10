@@ -7,14 +7,15 @@
 - 子目录下的 `source` 为指向真实模型目录的符号链接（只读引用）。
 - 模型权重不直接提交到 Git，仅保持链接与最小化说明文档。
 
-示例（已创建）
-- `dnn_models/qwen-2.5-vl/source -> /home/igame/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-7B-Instruct`
-- `dnn_models/florence-2-base/source -> /home/igame/.cache/huggingface/hub/models--microsoft--Florence-2-base`
+示例（已创建，固定到具体快照 hash）
+- `dnn_models/qwen-2.5-vl/source -> $HOME/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-7B-Instruct/snapshots/<hash>`
+- `dnn_models/florence-2-base/source -> $HOME/.cache/huggingface/hub/models--microsoft--Florence-2-base/snapshots/<hash>`
 
 快速操作
 ```bash
-# 创建（或重建）符号链接
-ln -s /path/to/hf_cache/models--Org--Model dnn_models/<model-name>/source
+# 创建（或重建）符号链接（指向具体快照）
+HASH=$(cat "$HOME/.cache/huggingface/hub/models--Org--Model/refs/main")
+ln -s "$HOME/.cache/huggingface/hub/models--Org--Model/snapshots/$HASH" dnn_models/<model-name>/source
 ```
 
 注意
