@@ -81,3 +81,6 @@ Thumbs.db
 !.pixi/config.toml
 
 /.codex
+
+# Local model symlinks (do not track weights/links)
+dnn_models/*/source
