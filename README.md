@@ -28,7 +28,7 @@
 │  ├─ 使用指南.md
 │  └─ 开发计划.md
 ├─ src/
-│  └─ universal_object_recognition/
+│  └─ univ_obj/
 │     └─ __init__.py             # 包占位（无实现）
 └─ tests/
    └─ README.md                  # 测试说明占位（无实现）
@@ -46,4 +46,3 @@
 
 ## 版权与许可
 - 许可协议待确定（如需）。
-
